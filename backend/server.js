@@ -12,7 +12,7 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3800
 const allowedOrigins = [
-   
+    
     'https://task-manager-mern-app-navy.vercel.app']
 app.use(express.json())
 app.use(cookieParser())
