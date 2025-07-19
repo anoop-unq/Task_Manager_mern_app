@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const userAuthMiddleware = async (req, res, next) => {
+  console.log(req.cookies,"7285")
   const  token = req.cookies.token;
   console.log("token",token)
   if (!token) {
