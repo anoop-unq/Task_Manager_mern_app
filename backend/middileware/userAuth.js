@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const userAuthMiddleware = async (req, res, next) => {
-  console.log(req.cookies,"7285")
+  console.log(req.cookies,"cookie")
   const  token = req.cookies.token;
   console.log("token",token)
   if (!token) {
@@ -23,7 +23,7 @@ export const userAuthMiddleware = async (req, res, next) => {
     next(); // Proceed to the next middleware/controller
   } catch (error) {
     console.error("JWT verification failed:", error.message);
-    return res.status(401).json({
+    return res.json({
       success: false,
       message: "Invalid or expired token. Please log in again.",
     });
