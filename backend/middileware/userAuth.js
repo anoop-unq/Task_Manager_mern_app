@@ -5,8 +5,8 @@ dotenv.config();
 
 export const userAuthMiddleware = async (req, res, next) => {
   console.log(req.cookies,"cookie")
-  const  token = req.cookies.token;
   console.log("token",token)
+  const  token = req.cookies.token;
   if (!token) {
     return res.json({
       success: false,

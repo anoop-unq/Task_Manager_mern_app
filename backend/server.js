@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3800
 const allowedOrigins= ['http://localhost:5173','https://task-manager-mern-app-navy.vercel.app']
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:allowedOrigins,credentials:true}))
+app.use(cors({origin:allowedOrigins,methods: ['GET', 'POST'],credentials:true}))
 app.use("/api",route)
 app.use("/api/user",authRouter)
 app.use("/api/notes",taskRouter)

@@ -67,18 +67,18 @@ export const login = async(req,res)=>{
     console.log(process.env.SECRET_KEY)
     console.log(email,password)
     if(!email || !password){
-        return res.status(404).json({message:"All Fields are required !"})
+        return res.json({message:"All Fields are required !"})
     }
     try {
     const user = await userModel.findOne({email})
     if(!user){
-        return res.status(404).json({message:"Invalid Email Details"})
+        return res.json({message:"Invalid Email Details"})
     }
 
     const isMatch = await bcrypt.compare(password,user.password)
 
     if(!isMatch){
-        return res.status(404).json({message:"Invalid Password Details"})
+        return res.json({message:"Invalid Password Details"})
     }
     
     const token = jwt.sign({id:user._id},process.env.SECRET_KEY,{expiresIn:"7d"});
@@ -103,10 +103,10 @@ export const login = async(req,res)=>{
       // Optionally: You can continue without failing the registration
     }
 
-    return res.status(201).json({success:true,message:"User Login Successfully !"})
+    return res.json({success:true,message:"User Login Successfully !"})
 }
     catch(error){
-        return res.status(500).json({success:false,message:error.message})
+        return res.json({success:false,message:error.message})
     }
 }
 
