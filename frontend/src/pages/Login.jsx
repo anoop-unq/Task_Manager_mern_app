@@ -259,7 +259,9 @@ const Login = () => {
           toast.error("User not found");
         }
       } else {
-        const res = await axios.post(`${backendUrl}/api/register`, data);
+        const res = await axios.post(`${backendUrl}/api/register`, data,{
+          withCredentials:true,
+        });
 
         if (res.data.success) {
           setIsLogged(true);
