@@ -11,7 +11,9 @@ dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 3800
-const allowedOrigins= ['http://localhost:5173','https://task-manager-mern-app-navy.vercel.app']
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://task-manager-mern-app-navy.vercel.app']
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({

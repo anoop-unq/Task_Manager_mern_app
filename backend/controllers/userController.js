@@ -1,10 +1,10 @@
 import userModel from "../models/user.js";
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
 import transporter from "../config/nodemailer.js";
 import { generateLoginEmail, generateOtpVerificationEmail, generateResetPasswordOtpEmail, generateWelcomeEmail } from "../config/emailTemplate.js";
 
+import dotenv from 'dotenv'
 
 dotenv.config()
 
