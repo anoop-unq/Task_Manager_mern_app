@@ -1,0 +1,170 @@
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 2rem;
+}
+
+.note-card-ui {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-card-ui:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.note-link-ui {
+  text-decoration: none;
+  color: inherit;
+}
+
+.note-content-ui h3 {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.note-content-ui p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.note-meta-ui {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-in-progress {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.note-actions-ui {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  background: #f7fafc;
+  border: none;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn.edit:hover {
+  background-color: #bee3f8;
+  color: #2b6cb0;
+}
+
+.btn.delete:hover {
+  background-color: #feb2b2;
+  color: #c53030;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f7fafc;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: #718096;
+  animation: fadeIn 0.5s ease;
+}
+.adjustable{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.add-task-btn {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.2);
+  transition: background 0.3s ease;
+}
+
+.add-task-btn i {
+  margin-right: 8px;
+}
+
+.add-task-btn:hover {
+  background-color: #5848f4;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.icon{
+    margin-top: 11px;
+}
+#iconId{
+  margin-left: 0px;
+  margin-top: 5px;
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+  box-shadow: 1px 1px 1px rgb(255, 239, 239);
+  padding: 11px 21px;
+  z-index: 99;
+}
