@@ -20,13 +20,13 @@ export const AppContextProvider = (props) => {
       console.log(response.data);
 
       if (response.data.success) {
-        setIsLogged(true)
+        // setIsLogged(true)
         setUserData(response.data.userData);
       } else {
         toast.error(response.data.message || "Failed to fetch user data");
       }
     } catch (error) {
-       setIsLogged(false);
+      //  setIsLogged(false);
       toast.error(
         error?.response?.data?.message || error.message || "Something went wrong"
       );

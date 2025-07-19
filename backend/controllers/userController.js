@@ -103,7 +103,7 @@ export const login = async(req,res)=>{
       // Optionally: You can continue without failing the registration
     }
 
-    return res.json({success:true,message:"User Login Successfully !"})
+    return res.json({success:true,message:"User Logged In Successfully !"})
 }
     catch(error){
         return res.json({success:false,message:error.message})
