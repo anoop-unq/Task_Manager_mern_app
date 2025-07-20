@@ -85,9 +85,7 @@ export const login = async(req,res)=>{
     console.log("Setting token:", token);
     res.cookie('token',token,{
         httpOnly:true,
-        // secure:process.env.NODE_ENV === 'production',
-        secure: process.env.NODE_ENV === 'production' ? true : false,
-
+        secure:process.env.NODE_ENV === 'production',
         // sameSite:process.env.NODE_ENV==='production' ?
         // 'None':'Strict',
         sameSite:"None",
