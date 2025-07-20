@@ -14,26 +14,27 @@ const PORT = process.env.PORT || 3800
 const allowedOrigins = [
     
     'https://task-manager-mern-app-navy.vercel.app']
+
+
+const corsOptions = {
+    origin:allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials:true,
+}
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
-
 // app.use(cors({
-//     origin:allowedOrigins,
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     credentials:true,
-// }))
-
-app.use(cors({
-    origin: (origin, callback) => {
-        console.log('Incoming request from origin:', origin);  // Logs the origin of incoming requests
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true); // Allow this origin
-        } else {
-            callback(new Error('Not allowed by CORS'));  // Deny this origin
-        }
-    },
-    credentials: true,
-}));
+//     origin: (origin, callback) => {
+//         console.log('Incoming request from origin:', origin);  // Logs the origin of incoming requests
+//         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//             callback(null, true); // Allow this origin
+//         } else {
+//             callback(new Error('Not allowed by CORS'));  // Deny this origin
+//         }
+//     },
+//     credentials: true,
+// }));
 
 
 app.use("/api",route)

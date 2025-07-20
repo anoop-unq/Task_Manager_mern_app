@@ -62,7 +62,7 @@ const Login = () => {
     }
 
     try {
-      axios.defaults.withCredentials = true;
+      // axios.defaults.withCredentials = true;
 
       if (formType === "login") {
         const res = await axios.post(`${backendUrl}/api/login`, data, {
