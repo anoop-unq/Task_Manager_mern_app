@@ -34,7 +34,7 @@ const Completed = () => {
 
     try {
       const response = await api.put(
-        `http://localhost:3800/api/notes/${id}`,
+        `/${id}`,
         {
           status: newStatus,
         }

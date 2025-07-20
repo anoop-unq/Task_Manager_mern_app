@@ -9,7 +9,7 @@ const Total = () => {
       useEffect(()=>{
         const fetchNote = async()=>{
           try {
-            const receivedData = await api.get('http://localhost:3800/api/notes')
+            const receivedData = await api.get('/')
             // console.log(receivedData,"555")
             setTodo(receivedData.data)
           } catch (error) {
@@ -20,7 +20,7 @@ const Total = () => {
       },[])
       const handleDelete = async(id)=>{
         console.log(id)
-        await api.delete(`http://localhost:3800/api/notes/${id}`)
+        await api.delete(`/${id}`)
         const filterdData = todo.filter((item)=>item._id != id)
         setTodo(filterdData)
       }
@@ -30,7 +30,7 @@ const Total = () => {
   console.log(id);
 
   try {
-    const response = await api.put(`http://localhost:3800/api/notes/${id}`, {
+    const response = await api.put(`/${id}`, {
       status: newStatus,
     });
 

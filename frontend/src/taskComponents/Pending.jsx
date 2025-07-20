@@ -9,7 +9,7 @@ const Pending = () => {
          useEffect(()=>{
            const fetchNote = async()=>{
              try {
-               const receivedData = await api.get('http://localhost:3800/api/notes')
+               const receivedData = await api.get('/')
                const pendingData = receivedData.data
                const updatePendingData = pendingData.filter((item)=>item.status === "Pending")
                setTodo(updatePendingData)

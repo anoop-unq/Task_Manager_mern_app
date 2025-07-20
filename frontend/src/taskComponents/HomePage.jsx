@@ -22,7 +22,7 @@ const HomePage = () => {
   useEffect(()=>{
     const fetchNote = async()=>{
       try {
-        const receivedData = await api.get('http://localhost:3800/api/notes')
+        const receivedData = await api.get('/')
         console.log(receivedData,"555")
         setTodo(receivedData.data)
         
@@ -39,7 +39,7 @@ const HomePage = () => {
   },[])
   const handleDelete = async(e,id)=>{
     e.preventDefault()
-    await api.delete(`http://localhost:3800/api/notes/${id}`)
+    await api.delete(`/${id}`)
     setTodo(prev => prev.filter(item => item._id !== id));
         toast.success('Task deleted successfully !', {
   icon: '✅',
