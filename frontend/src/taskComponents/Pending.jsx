@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft,FaEdit } from "react-icons/fa";
 import {api} from '../Lib/axios';
 // import './total.css'
 const Pending = () => {
@@ -27,7 +27,7 @@ const Pending = () => {
         console.log(id);
 
   try {
-    const response = await api.put(`http://localhost:3800/api/notes/${id}`, {
+    const response = await api.put(`/${id}`, {
       status: newStatus,
     });
 
@@ -45,7 +45,7 @@ const Pending = () => {
 };
          const handleDelete = async(id)=>{
           console.log(id)
-          await api.delete(`http://localhost:3800/api/notes/${id}`)
+          await api.delete(`/${id}`)
           const filterdData = todo.filter((item)=>item._id != id)
           setTodo(filterdData)
             }

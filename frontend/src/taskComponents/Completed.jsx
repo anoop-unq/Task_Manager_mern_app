@@ -8,7 +8,7 @@ const Completed = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const receivedData = await api.get("http://localhost:3800/api/notes");
+        const receivedData = await api.get("/");
         const pendingData = receivedData.data;
         const updatePendingData = pendingData.filter(
           (item) => item.status === "Completed"
@@ -22,7 +22,7 @@ const Completed = () => {
   }, []);
   const handleDelete = async (id) => {
     console.log(id);
-    await api.delete(`http://localhost:3800/api/notes/${id}`);
+    await api.delete(`/${id}`);
     const filterdData = todo.filter((item) => item._id != id);
     setTodo(filterdData);
   };

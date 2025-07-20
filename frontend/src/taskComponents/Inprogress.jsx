@@ -22,7 +22,7 @@ const Inprogress = () => {
   }, []);
   const handleDelete = async (id) => {
     console.log(id);
-    await api.delete(`http://localhost:3800/api/notes/${id}`);
+    await api.delete(`/${id}`);
     const filterdData = todo.filter((item) => item._id != id);
     setTodo(filterdData);
   };
@@ -34,7 +34,7 @@ const Inprogress = () => {
 
     try {
       const response = await api.put(
-        `http://localhost:3800/api/notes/${id}`,
+        `/${id}`,
         {
           status: newStatus,
         }
