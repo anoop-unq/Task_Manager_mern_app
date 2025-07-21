@@ -100,10 +100,11 @@ const ResetPassword = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-purple-200">
       <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Reset Password</h2>
-       <Link to={"/"} className="btn edit inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200">
+         <Link to={"/"} className="btn edit inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200">
     <FaArrowLeft className="mr-2" />
   </Link>
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Reset Password</h2>
+      
 
         {/* Step 1: Email */}
         {!isEmailSent && (
