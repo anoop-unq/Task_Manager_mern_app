@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AuthContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { FaArrowLeft } from "react-icons/fa";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
@@ -100,7 +101,9 @@ const ResetPassword = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-purple-200">
       <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Reset Password</h2>
-
+        <Link to={"/"} className="btn edit">
+                <FaArrowLeft />
+              </Link>
         {/* Step 1: Email */}
         {!isEmailSent && (
           <form onSubmit={handleSubmitEmail} className="space-y-4">
