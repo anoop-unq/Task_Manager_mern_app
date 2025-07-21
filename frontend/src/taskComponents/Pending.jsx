@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { FaArrowLeft,FaEdit } from "react-icons/fa";
+import { FaArrowLeft,FaEdit ,FaTrash} from "react-icons/fa";
 import {api} from '../Lib/axios';
 // import './total.css'
 const Pending = () => {
